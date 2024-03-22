@@ -1,6 +1,4 @@
-﻿using System.Text.Json.Serialization;
-
-namespace Shared.Dtos;
+﻿namespace Shared.Dtos;
 
 public class Response<T> where T : class
 {
