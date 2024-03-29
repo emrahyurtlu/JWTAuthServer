@@ -28,7 +28,7 @@ public class AuthenticationService : IAuthenticationService
         _userRefreshTokenService = userRefreshTokenService;
     }
 
-    public async Task<Response<TokenDto>> CreateToken(LoginDto loginDto)
+    public async Task<Response<TokenDto>> CreateTokenAsync(LoginDto loginDto)
     {
         if (loginDto is null)
         {

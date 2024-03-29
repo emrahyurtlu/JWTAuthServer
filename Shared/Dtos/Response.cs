@@ -3,7 +3,7 @@
 public class Response<T> where T : class
 {
     public T? Data { get; private set; }
-    public int Status { get; private set; } // It is useful in some projects such as mobile apps
+    public int StatusCode { get; private set; } // It is useful in some projects such as mobile apps
     public ErrorDto? Error { get; private set; }    
     public bool IsSuccessful { get; private set; }
 
@@ -12,7 +12,7 @@ public class Response<T> where T : class
         return new Response<T>
         {
             Data = data,
-            Status = statusCode,
+            StatusCode = statusCode,
             IsSuccessful = true
         };
     }
@@ -21,7 +21,7 @@ public class Response<T> where T : class
     {
         return new Response<T>
         {
-            Status = statusCode,
+            StatusCode = statusCode,
             IsSuccessful = true
         };
     }
@@ -30,7 +30,7 @@ public class Response<T> where T : class
     {
         return new Response<T>
         {
-            Status = statusCode,
+            StatusCode = statusCode,
             Error = error,
             IsSuccessful = false
         };
@@ -40,7 +40,7 @@ public class Response<T> where T : class
     {
         return new Response<T>
         {
-            Status = statusCode,
+            StatusCode = statusCode,
             Error = new ErrorDto(errorMessage, isShow),
             IsSuccessful = false
         };
